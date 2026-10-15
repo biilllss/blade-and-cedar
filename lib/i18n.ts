@@ -1,7 +1,10 @@
 export type Locale = "en" | "ar";
 
 /* All site copy lives here. `ar` is typed as `typeof en`, so TypeScript
-   forces you to keep both languages in sync when you edit either one. */
+   forces you to keep both languages in sync when you edit either one.
+   NOTE: `en` is deliberately NOT `as const` — literal types would demand
+   identical strings in both languages. Widened `string` types keep key
+   parity enforced while allowing different copy per language. */
 
 const en = {
   nav: {
@@ -123,7 +126,7 @@ const en = {
   whatsapp: {
     aria: "Chat with us on WhatsApp",
   },
-} as const;
+};
 
 const ar: typeof en = {
   nav: {
