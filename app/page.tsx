@@ -1,6 +1,7 @@
 import { LanguageProvider } from "@/components/LanguageProvider";
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
+import ServiceStrip from "@/components/ServiceStrip";
 import About from "@/components/About";
 import Services from "@/components/Services";
 import Gallery from "@/components/Gallery";
@@ -17,6 +18,7 @@ export default function Page() {
       <Header />
       <main>
         <Hero />
+        <ServiceStrip />
         <About />
         <Services />
         <Gallery />

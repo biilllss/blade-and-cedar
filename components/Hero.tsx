@@ -1,22 +1,22 @@
 "use client";
 
 import Image from "next/image";
-import { ChevronDown } from "lucide-react";
 import { useLanguage } from "./LanguageProvider";
 import { buttonVariants } from "./ui/button";
 import { whatsappLink } from "@/lib/config";
 import { HERO_IMAGE } from "@/lib/images";
 import { cn } from "@/lib/utils";
 
+/* Bottom-aligned, start-anchored — an editorial opening, not a poster.
+   No scroll-reveal anywhere on this page: content is simply there. */
 export default function Hero() {
   const { locale, t } = useLanguage();
 
   return (
     <section
       id="top"
-      className="relative flex min-h-[100svh] items-center justify-center overflow-hidden"
+      className="relative flex min-h-[100svh] flex-col justify-end overflow-hidden"
     >
-      {/* Background */}
       <Image
         src={HERO_IMAGE}
         alt=""
@@ -25,31 +25,25 @@ export default function Hero() {
         sizes="100vw"
         className="object-cover"
       />
-      {/* Charcoal veil so text stays readable and the mood stays dark */}
+      {/* Direction-agnostic veils: flat darkening + bottom fade */}
+      <div aria-hidden="true" className="absolute inset-0 bg-charcoal/40" />
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-b from-charcoal/80 via-charcoal/60 to-charcoal"
+        className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/55 to-transparent"
       />
 
-      {/* Content */}
-      <div className="relative z-10 mx-auto max-w-4xl px-5 pb-24 pt-28 text-center md:px-8">
-        <p className="flex items-center justify-center gap-4 text-xs uppercase tracking-[0.3em] text-gold">
-          <span aria-hidden="true" className="hidden h-px w-10 bg-gold/60 sm:block" />
-          {t.hero.eyebrow}
-          <span aria-hidden="true" className="hidden h-px w-10 bg-gold/60 sm:block" />
-        </p>
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-5 pb-16 pt-40 md:px-8 md:pb-24">
+        <p className="text-sm text-cream/70">{t.hero.meta}</p>
 
-        <h1 className="mt-6 font-display text-5xl leading-[1.05] sm:text-6xl md:text-7xl lg:text-8xl">
-          {t.hero.title}{" "}
-          <span className="text-gold italic">{t.hero.titleAccent}</span>
+        <h1 className="mt-4 max-w-3xl font-display text-6xl leading-[0.95] sm:text-7xl lg:text-8xl">
+          {t.hero.title}
         </h1>
 
-        <p className="mx-auto mt-6 max-w-xl text-base text-cream/70 md:text-lg">
+        <p className="mt-6 max-w-md text-lg leading-relaxed text-cream/75">
           {t.hero.subtitle}
         </p>
 
-        <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-          {/* Primary — WhatsApp booking */}
+        <div className="mt-10 flex flex-col gap-3 sm:flex-row">
           <a
             href={whatsappLink(locale)}
             target="_blank"
@@ -58,7 +52,6 @@ export default function Hero() {
           >
             {t.hero.primaryCta}
           </a>
-          {/* Secondary — scroll to services */}
           <a
             href="#services"
             className={cn(
@@ -70,15 +63,6 @@ export default function Hero() {
           </a>
         </div>
       </div>
-
-      {/* Scroll cue */}
-      <a
-        href="#about"
-        aria-label={t.about.eyebrow}
-        className="absolute bottom-8 left-1/2 z-10 -translate-x-1/2 text-cream/50 transition-colors hover:text-gold"
-      >
-        <ChevronDown className="h-6 w-6 animate-bounce" aria-hidden="true" />
-      </a>
     </section>
   );
 }

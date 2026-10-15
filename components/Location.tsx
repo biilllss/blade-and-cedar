@@ -2,7 +2,6 @@
 
 import { Clock, MapPin } from "lucide-react";
 import { useLanguage } from "./LanguageProvider";
-import FadeUp from "./FadeUp";
 
 export default function Location() {
   const { t } = useLanguage();
@@ -10,54 +9,48 @@ export default function Location() {
   return (
     <section id="contact" className="border-t border-cream/10 bg-charcoal-light">
       <div className="mx-auto max-w-7xl px-5 py-24 md:px-8 md:py-32">
-        <FadeUp className="text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-gold">
-            {t.location.eyebrow}
-          </p>
-          <h2 className="mt-4 font-display text-4xl leading-tight md:text-5xl">
-            {t.location.title}
-          </h2>
-        </FadeUp>
-
-        <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:gap-16">
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
           {/* Address + hours */}
-          <FadeUp delay={100}>
-            <div className="flex items-start gap-4">
+          <div>
+            <h2 className="font-display text-4xl leading-tight md:text-5xl">
+              {t.location.title}
+            </h2>
+
+            <div className="mt-10 flex items-start gap-4">
               <MapPin aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-gold" />
               <div>
-                <h3 className="text-xs uppercase tracking-[0.2em] text-cream/50">
-                  {t.location.addressLabel}
-                </h3>
-                <p className="mt-2 font-display text-xl md:text-2xl">
+                <h3 className="text-sm text-cream/50">{t.location.addressLabel}</h3>
+                <p className="mt-1 font-display text-xl md:text-2xl">
                   {t.location.address}
                 </p>
-                <p className="mt-3 text-sm text-cream/50">{t.location.walkIns}</p>
+                <p className="mt-2 max-w-md text-sm text-cream/50">
+                  {t.location.landmark}
+                </p>
               </div>
             </div>
 
             <div className="mt-10 flex items-start gap-4">
               <Clock aria-hidden="true" className="mt-1 h-5 w-5 shrink-0 text-gold" />
               <div className="w-full">
-                <h3 className="text-xs uppercase tracking-[0.2em] text-cream/50">
-                  {t.location.hoursLabel}
-                </h3>
-                <ul className="mt-3 w-full border-t border-cream/10">
+                <h3 className="text-sm text-cream/50">{t.location.hoursLabel}</h3>
+                <ul className="mt-2 w-full border-t border-cream/10">
                   {t.location.hours.map((row) => (
                     <li
                       key={row.days}
                       className="flex items-baseline justify-between gap-6 border-b border-cream/10 py-3"
                     >
                       <span className="text-sm">{row.days}</span>
-                      <span className="text-sm text-gold">{row.time}</span>
+                      <span className="text-sm text-cream/70">{row.time}</span>
                     </li>
                   ))}
                 </ul>
+                <p className="mt-3 text-sm text-cream/50">{t.location.walkIns}</p>
               </div>
             </div>
-          </FadeUp>
+          </div>
 
           {/* Styled map placeholder — swap for a real embed later */}
-          <FadeUp delay={180}>
+          <div className="lg:pt-24">
             <div
               role="img"
               aria-label={t.location.mapLabel}
@@ -73,7 +66,10 @@ export default function Location() {
                   backgroundSize: "48px 48px",
                 }}
               />
-              <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent" />
+              <div
+                aria-hidden="true"
+                className="absolute inset-0 bg-gradient-to-t from-charcoal/60 to-transparent"
+              />
               <div className="relative text-center">
                 <MapPin aria-hidden="true" className="mx-auto h-8 w-8 text-gold" />
                 <p className="mt-3 font-display text-lg">{t.location.address}</p>
@@ -81,13 +77,13 @@ export default function Location() {
                   href="https://maps.google.com/?q=Mar+Mikhael,+Beirut"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-block text-xs uppercase tracking-[0.2em] text-gold underline-offset-4 hover:underline"
+                  className="mt-3 inline-block text-sm text-gold underline-offset-4 hover:underline"
                 >
                   {t.location.openInMaps}
                 </a>
               </div>
             </div>
-          </FadeUp>
+          </div>
         </div>
       </div>
     </section>

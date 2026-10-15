@@ -1,109 +1,106 @@
 export type Locale = "en" | "ar";
 
 /* All site copy lives here. `ar` is typed as `typeof en`, so TypeScript
-   forces you to keep both languages in sync when you edit either one.
+   forces both languages to stay in sync. Copy is written like a real shop
+   would talk — specific, a little rough, never a slogan generator.
    NOTE: `en` is deliberately NOT `as const` — literal types would demand
-   identical strings in both languages. Widened `string` types keep key
-   parity enforced while allowing different copy per language. */
+   identical strings in both languages. */
 
 const en = {
   nav: {
     about: "About",
-    services: "Services",
+    services: "Prices",
     gallery: "Gallery",
     barbers: "Barbers",
     reviews: "Reviews",
     contact: "Visit us",
-    book: "Book now",
+    book: "Book",
     menuLabel: "Main menu",
     openMenu: "Open menu",
     closeMenu: "Close menu",
     langLabel: "Switch language",
   },
   hero: {
-    eyebrow: "Mar Mikhael · Beirut",
-    title: "Sharp looks.",
-    titleAccent: "Warm craft.",
+    meta: "Est. 2019 — Mar Mikhael, Beirut",
+    title: "A proper cut.",
     subtitle:
-      "A premium barbershop in the heart of Beirut — classic technique, modern finish, and never a rushed chair.",
+      "Walk in, sit down. The coffee's on, the radio's on Fairuz, and nobody's rushing you out of the chair.",
     primaryCta: "Book on WhatsApp",
-    secondaryCta: "View services",
+    secondaryCta: "Prices",
   },
   about: {
-    eyebrow: "The shop",
-    title: "Where craft meets cedar",
+    title: "A shop, not a factory.",
     body: [
-      "Blade & Cedar started with a simple idea: Beirut deserves a barbershop that treats a haircut like a craft, not a chore.",
-      "Named after the cedar that has watched over these mountains for centuries, we keep things sharp, warm and unhurried — one chair at a time.",
-      "No double-booking, no rush. Just a proper cut and a proper welcome.",
+      "Blade & Cedar opened in 2019 with three chairs, one mirror each, and a landlord who thought we were crazy to open a barbershop here. He comes in every second Thursday now.",
+      "The name? The blade is the work. The cedar is where we're from. We kept both.",
+      "Karim took the chair by the window. Elie claimed the good clippers. Sami brought his own towels from day one — that's the kind of shop this is.",
     ],
+    imageCaption: "The chair by the window. Karim's.",
   },
   services: {
-    eyebrow: "Services & prices",
-    title: "Straightforward pricing, no surprises",
-    note: "All prices in USD · Walk-ins welcome, booking recommended",
+    title: "Prices",
+    note: "All in USD, as everything in Lebanon. Whish or cash.",
     items: [
-      { name: "Classic Haircut", desc: "Consultation, cut, wash & style", price: "$12" },
-      { name: "Skin Fade", desc: "Sharp blend, razor-finished edges", price: "$15" },
-      { name: "Beard Trim & Shape", desc: "Clean lines, beard oil finish", price: "$8" },
-      { name: "Haircut + Beard", desc: "The full works, one sitting", price: "$18" },
-      { name: "Hot Towel Shave", desc: "Traditional straight razor & hot towels", price: "$12" },
-      { name: "Kids Cut", desc: "Under 10s, patient barbers", price: "$8" },
+      { name: "Classic Haircut", desc: "Scissors & clippers, washed and styled.", price: "$12" },
+      { name: "Skin Fade", desc: "Blended to nothing, razor-finished edges.", price: "$15" },
+      { name: "Beard Trim & Shape", desc: "Lines, oil, and honest advice about the neck.", price: "$8" },
+      { name: "Haircut + Beard", desc: "Both, one sitting.", price: "$18" },
+      { name: "Hot Towel Shave", desc: "Straight razor, three towels, twenty minutes.", price: "$12" },
+      { name: "Kids Cut", desc: "Under 10. We bring the patience, you bring the child.", price: "$8" },
     ],
   },
   gallery: {
-    eyebrow: "Gallery",
-    title: "Recent work",
+    title: "Recent cuts",
+    note: "Six of the last few hundred.",
   },
   barbers: {
-    eyebrow: "Meet the barbers",
-    title: "Three chairs, one obsession",
+    title: "Who owns which chair",
     items: [
       {
         name: "Karim Haddad",
-        role: "Master Barber & Founder",
-        bio: "Twenty years behind the chair. Old-school technique, new-school standards.",
+        role: "The chair by the window",
+        bio: "Twenty years behind a chair. First head he cut was his cousin's, at 14 — badly. He's improved since.",
       },
       {
         name: "Elie Nassar",
-        role: "Fade Specialist",
-        bio: "The sharpest blends in Mar Mikhael. Book early — his column fills up fast.",
+        role: "The good clippers",
+        bio: "Does the kind of fade that makes the next customer cancel his appointment somewhere else.",
       },
       {
         name: "Sami Khoury",
-        role: "Beard & Shave Specialist",
-        bio: "Straight-razor shaves and beards that behave all week.",
+        role: "The private towels",
+        bio: "Straight-razor shaves since 2012. Brings his own towels; we've stopped asking why.",
       },
     ],
   },
   reviews: {
-    eyebrow: "Reviews",
-    title: "What the regulars say",
+    title: "Word of mouth",
     items: [
       {
         quote:
-          "Best fade I've had in Beirut. Clean space, zero rushing, and Karim actually listens before he picks up the clippers.",
-        name: "Tarek A.",
+          "Walked in five minutes before close and still got the full hot-towel treatment, zero dirty looks. Try that anywhere else in Mar Mikhael.",
+        name: "Tarek, regular since 2021",
       },
       {
         quote:
-          "Messaged on WhatsApp and I was in the chair twenty minutes later. The hot towel shave alone is worth the trip.",
-        name: "Jad S.",
+          "Karim listened to what I wanted. Actually listened. First barber in Beirut who didn't 'know better'.",
+        name: "Jad, regular since 2023",
       },
       {
         quote:
-          "Took my son for his first proper haircut. Patient, professional, and the result was genuinely sharp. We're regulars now.",
-        name: "Rami K.",
+          "My son's first haircut. Sami gave him the chair like it was a spaceship. He still talks about it.",
+        name: "Rami, and his son",
       },
     ],
   },
   location: {
-    eyebrow: "Find us",
-    title: "In the heart of Mar Mikhael",
+    title: "Find us",
     addressLabel: "Address",
-    address: "Street 17, Mar Mikhael, Beirut, Lebanon",
-    hoursLabel: "Opening hours",
-    walkIns: "Walk-ins welcome · Booking recommended",
+    address: "Street 17, Mar Mikhael, Beirut",
+    landmark:
+      "Ground floor, next to the pharmacy with the green cross — you'll hear the radio from the street.",
+    hoursLabel: "Hours",
+    walkIns: "Walk-ins fine. Booking smarter.",
     hours: [
       { days: "Monday – Saturday", time: "10:00 – 21:00" },
       { days: "Sunday", time: "11:00 – 18:00" },
@@ -113,13 +110,13 @@ const en = {
   },
   cta: {
     title: "Your chair is waiting.",
-    subtitle:
-      "Same-day slots go fast. Send one message and we'll confirm your appointment in minutes.",
+    subtitle: "A message takes a second. We usually reply in five.",
     button: "Book on WhatsApp",
+    note: "WhatsApp only — we're usually holding scissors.",
   },
   footer: {
-    tagline: "Premium Barbershop · Beirut",
-    follow: "Follow us",
+    tagline: "Barbershop · Mar Mikhael, Beirut",
+    follow: "Follow",
     rights: "© 2026 Blade & Cedar. All rights reserved.",
     concept: "Concept design by Mawqe3 Studio",
   },
@@ -131,101 +128,96 @@ const en = {
 const ar: typeof en = {
   nav: {
     about: "من نحن",
-    services: "خدماتنا",
+    services: "الأسعار",
     gallery: "أعمالنا",
-    barbers: "فريقنا",
+    barbers: "الفريق",
     reviews: "آراء الزبائن",
     contact: "موقعنا",
-    book: "احجز الآن",
+    book: "احجز",
     menuLabel: "القائمة الرئيسية",
     openMenu: "افتح القائمة",
     closeMenu: "أغلق القائمة",
     langLabel: "تغيير اللغة",
   },
   hero: {
-    eyebrow: "المريخا · بيروت",
-    title: "أناقة حادّة.",
-    titleAccent: "دفء لبناني.",
+    meta: "منذ ٢٠١٩ — المريخا، بيروت",
+    title: "قصّة كما يجب.",
     subtitle:
-      "صالون حلاقة راقٍ في قلب بيروت — حِرفة كلاسيكية، لمسة عصرية، ووقت لا يُستعجل.",
+      "تعى، اجلس. القهوة عالنار، الفايرز عالراديو، وما حدا رح يستعجلك عالكرسي.",
     primaryCta: "احجز عبر واتساب",
-    secondaryCta: "تعرّف على خدماتنا",
+    secondaryCta: "الأسعار",
   },
   about: {
-    eyebrow: "عن الصالون",
-    title: "حيث تلتقي الحِرفة بالأرزة",
+    title: "صالون، مش مصنع.",
     body: [
-      "بدأت حكاية بليد أند سيدر من فكرة بسيطة: بيروت تستحق صالوناً يتعامل مع الحلاقة كحِرفة، لا كواجب.",
-      "سمّينا الصالون على اسم الأرزة التي تحرس جبالنا منذ قرون، فبقينا أوفياء لروحها: دقّة في العمل، ودفء في الاستقبال.",
-      "لا حجز مزدوج ولا استعجال — فقط قصّة كما يجب، وترحيب كما يجب.",
+      "انفتح بليد آند سيدر سنة ٢٠١٩ بثلاث كراسي ومراية لكل واحد، وصاحب العمارة حسبنا مجانين لأننا حاطّين صالون بهالمكان. اليوم بييجي كل خميس تاني يتحلق عنا.",
+      "الاسم؟ الشفر هو الشغل، والأرزة هي البلد. خبّينا الاثنين بالاسم وبس.",
+      "كرم خد الكرسي يلي عالشباك، إيلي مزعوم عالمكينات الحلوة، وسامي جايب مناشفه من أول يوم — هيك صالون بهالشكل.",
     ],
+    imageCaption: "الكرسي يلي عالشباك. تبع كرم.",
   },
   services: {
-    eyebrow: "الخدمات والأسعار",
-    title: "أسعار واضحة، بلا مفاجآت",
-    note: "جميع الأسعار بالدولار الأمريكي · نستقبلكم بدون موعد، لكن ننصح بالحجز",
+    title: "الأسعار",
+    note: "كله بالدولار متل كل شي بلبنان. ويز أو كاش.",
     items: [
-      { name: "قصّة كلاسيكية", desc: "تشاور، قصّة، غسيل وتصفيف", price: "$12" },
-      { name: "قصّة تدريجية (فايد)", desc: "تدرّج نظيف وتشطيب بالموّس", price: "$15" },
-      { name: "تشذيب وتحديد اللحية", desc: "خطوط مرتّبة وتصفيف بزيت اللحية", price: "$8" },
-      { name: "قصّة + لحية", desc: "الطقم الكامل بجلسة واحدة", price: "$18" },
-      { name: "حلاقة بالمنشفة الساخنة", desc: "موّس تقليدي ومناشف ساخنة", price: "$12" },
-      { name: "قصّة أطفال", desc: "للصغار حتى ١٠ سنوات، بكل صبر", price: "$8" },
+      { name: "قصّة كلاسيكية", desc: "مقصّ وماكينة، غسيل وتصفيف.", price: "$12" },
+      { name: "قصّة تدريجية (فايد)", desc: "تدرّج محسوس مش مرسوم، وتشطيب بالموّس.", price: "$15" },
+      { name: "تشذيب وتحديد اللحية", desc: "خطوط، زيت، ونصيحة صريحة عن الرقبة.", price: "$8" },
+      { name: "قصّة + لحية", desc: "الاثنين بجلسة وحدة.", price: "$18" },
+      { name: "حلاقة بالمنشفة الساخنة", desc: "موّس، تلات مناشف، عشرين دقيقة.", price: "$12" },
+      { name: "قصّة أطفال", desc: "تحت ١٠ سنين. الصبر علينا، الولد عليك.", price: "$8" },
     ],
   },
   gallery: {
-    eyebrow: "معرض الصور",
-    title: "من أعمالنا",
+    title: "شغلنا الأخير",
+    note: "ستّة من آخر مية قصّة.",
   },
   barbers: {
-    eyebrow: "تعرّف على الفريق",
-    title: "ثلاثة كراسي، وشغف واحد",
+    title: "مين صاحب أي كرسي",
     items: [
       {
         name: "كرم حدّاد",
-        role: "حلاّق أوّل ومؤسس",
-        bio: "عشرون عاماً خلف الكرسي. تقنيات الكلاسيك بمعايير اليوم.",
+        role: "الكرسي يلي عالشباك",
+        bio: "عشرين سنة ورا الكرسي. أول راس حلقه كان تبع ابن خته، بعمر الـ١٤ — ما كانت حلوة. تحسّن من وقتها.",
       },
       {
         name: "إليّ نصّار",
-        role: "مختص بالقصّات التدريجية",
-        bio: "أنظف تدرّجات في المريخا. احجز مبكراً — مواعيده تمتلي بسرعة.",
+        role: "المكينات الحلوة",
+        bio: "بيعمل فايد بيخلي الزبون اللي بعدك يلغي موعده بمكان تاني.",
       },
       {
         name: "سامي خوري",
-        role: "مختص باللحية والحلاقة التقليدية",
-        bio: "حلاقة بالموّس، ولحية تبقى مرتّبة طوال الأسبوع.",
+        role: "المناشف الخاصة",
+        bio: "حلاقة بالموّس من ٢٠١٢. جايب مناشفه الخاصة، ونحنا وقفنا نسأل ليش.",
       },
     ],
   },
   reviews: {
-    eyebrow: "آراء الزبائن",
-    title: "ماذا يقول روّادنا",
+    title: "من فم الزبائن",
     items: [
       {
         quote:
-          "أفضل قصّة تدريجية جرّبتها في بيروت. المكان نظيف، ولا أحد يستعجل، وكرم يسمع لطلبك قبل أن يرفع الماكينة.",
-        name: "طارق ع.",
+          "دخلت قبل خمس دقايق من الغلق، وعملّي حلاقة المنشفة كاملة بلا أي نظرة استياء. جرّب هيك بغير مكان بالمريخا.",
+        name: "طارق، من ٢٠٢١",
       },
       {
         quote:
-          "أرسلت رسالة على واتساب وجلست على الكرسي بعد عشرين دقيقة. تجربة الحلاقة بالمنشفة الساخنة وحدها تستحق الزيارة.",
-        name: "جاد س.",
+          "كرم سمع شو بدّي. فعلياً سمع. أول حلّاق ببيروت ما قال «أنا أعرف أحسن».",
+        name: "جاد، من ٢٠٢٣",
       },
       {
-        quote:
-          "أخذت ابني لأول قصّة جدّية. صبر واحترافية، والنتيجة كانت ممتازة. صرنا من الزبائن الدائمين.",
-        name: "رامي خ.",
+        quote: "أول قصّة لابني. سامي عطاه الكرسي كأنه سفينة فضائية. لحد اليوم عم يحكي فيها.",
+        name: "رامي وابنه",
       },
     ],
   },
   location: {
-    eyebrow: "موقعنا",
-    title: "في قلب المريخا",
+    title: "موقعنا",
     addressLabel: "العنوان",
-    address: "شارع ١٧، المريخا، بيروت، لبنان",
-    hoursLabel: "ساعات العمل",
-    walkIns: "بدون موعد ممكن، لكن الحجز أفضل",
+    address: "شارع ١٧، المريخا، بيروت",
+    landmark: "طابق أرضي، جنب الصيدلية يلي عالشارع — بتسمع الراديو من عالطريق.",
+    hoursLabel: "الساعات",
+    walkIns: "بدون موعد منمشي، بس الحجز أذكى.",
     hours: [
       { days: "الاثنين – السبت", time: "١٠:٠٠ – ٢١:٠٠" },
       { days: "الأحد", time: "١١:٠٠ – ١٨:٠٠" },
@@ -235,14 +227,14 @@ const ar: typeof en = {
   },
   cta: {
     title: "كرسيك بانتظارك.",
-    subtitle:
-      "المواعيد الأخيرة تُحجز بسرعة. أرسل رسالة واحدة ونؤكد لك موعدك خلال دقائق.",
+    subtitle: "رسالة بتاخد ثانية. من رد عادةً خلال خمس.",
     button: "احجز عبر واتساب",
+    note: "واتساب فقط — غالباً إيدينا عالشفر.",
   },
   footer: {
-    tagline: "صالون حلاقة راقٍ · بيروت",
+    tagline: "صالون حلاقة · المريخا، بيروت",
     follow: "تابعنا",
-    rights: "© ٢٠٢٦ بليد أند سيدر. جميع الحقوق محفوظة.",
+    rights: "© ٢٠٢٦ بليد آند سيدر. جميع الحقوق محفوظة.",
     concept: "تصميم مفاهيمي من Mawqe3 Studio",
   },
   whatsapp: {

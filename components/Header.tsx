@@ -33,14 +33,14 @@ export default function Header() {
           Blade <span className="text-gold">&amp;</span> Cedar
         </a>
 
-        {/* Desktop links */}
+        {/* Desktop links — normal case, quiet */}
         <nav aria-label={t.nav.menuLabel} className="hidden lg:block">
-          <ul className="flex items-center gap-8">
+          <ul className="flex items-center gap-7">
             {SECTION_KEYS.map((key) => (
               <li key={key}>
                 <a
                   href={`#${key}`}
-                  className="text-xs uppercase tracking-[0.18em] text-cream/70 transition-colors hover:text-gold"
+                  className="text-sm text-cream/60 transition-colors hover:text-gold"
                 >
                   {t.nav[key]}
                 </a>
@@ -54,7 +54,7 @@ export default function Header() {
           <div
             role="group"
             aria-label={t.nav.langLabel}
-            className="flex items-center text-xs tracking-widest"
+            className="flex items-center text-sm"
           >
             <button
               type="button"
@@ -118,7 +118,7 @@ export default function Header() {
                 <a
                   href={`#${key}`}
                   onClick={() => setOpen(false)}
-                  className="block py-3 text-sm uppercase tracking-[0.18em] text-cream/80 hover:text-gold"
+                  className="block py-3 text-base text-cream/80 hover:text-gold"
                 >
                   {t.nav[key]}
                 </a>
