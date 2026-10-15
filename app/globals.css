@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-charcoal text-cream antialiased;
+}
+
+/* Gold selection + visible keyboard focus everywhere */
+::selection {
+  background: #c9a24b;
+  color: #121212;
+}
+
+:focus-visible {
+  outline: 2px solid #c9a24b;
+  outline-offset: 3px;
+}
+
+/* ── Arabic mode: Cairo replaces both Inter and Playfair, since
+      Playfair has no Arabic glyphs. These rules sit outside Tailwind's
+      layers so they override the utility font classes in RTL. ── */
+html[dir="rtl"] body {
+  font-family: var(--font-cairo), var(--font-inter), sans-serif;
+}
+html[dir="rtl"] .font-display {
+  font-family: var(--font-cairo), serif;
+  letter-spacing: 0; /* Latin display tracking reads badly on Arabic */
+}
+
+/* ── Reduced motion: kill all transitions/animations globally ── */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
