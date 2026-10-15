@@ -17,7 +17,7 @@ const config: Config = {
         whatsapp: "#25D366", // brand green, used only on the floating chat button
       },
       fontFamily: {
-        display: ["var(--font-playfair)", "serif"],
+        display: ["var(--font-fraunces)", "serif"],
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
       },
       maxWidth: {

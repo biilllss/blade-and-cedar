@@ -1,12 +1,14 @@
 import type { Metadata, Viewport } from "next";
-import { Playfair_Display, Inter, Cairo } from "next/font/google";
+import { Fraunces, Inter, Cairo } from "next/font/google";
 import { HERO_IMAGE } from "@/lib/images";
 import "./globals.css";
 
-/* Fonts loaded via next/font — self-hosted, zero layout shift */
-const playfair = Playfair_Display({
+/* Fonts via next/font — self-hosted, zero layout shift.
+   Fraunces instead of the usual luxury-serif suspects: it has the slightly
+   wonky, printed-signage character that suits a barbershop. */
+const fraunces = Fraunces({
   subsets: ["latin"],
-  variable: "--font-playfair",
+  variable: "--font-fraunces",
   display: "swap",
 });
 const inter = Inter({
@@ -22,14 +24,14 @@ const cairo = Cairo({
 
 const SITE_URL = "https://blade-and-cedar.example.com"; // ← change when you have a domain
 const OG_DESCRIPTION =
-  "A premium barbershop in Mar Mikhael, Beirut. Sharp cuts, straight-razor shaves and warm Lebanese hospitality. Book on WhatsApp.";
+  "A barbershop in Mar Mikhael, Beirut. Three chairs, sharp fades, straight-razor shaves, coffee on, Fairuz on. Book on WhatsApp.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: "Blade & Cedar — Premium Barbershop in Beirut",
+  title: "Blade & Cedar — Barbershop, Mar Mikhael, Beirut",
   description: OG_DESCRIPTION,
   openGraph: {
-    title: "Blade & Cedar — Premium Barbershop in Beirut",
+    title: "Blade & Cedar — Barbershop, Mar Mikhael, Beirut",
     description: OG_DESCRIPTION,
     url: SITE_URL,
     siteName: "Blade & Cedar",
@@ -46,7 +48,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blade & Cedar — Premium Barbershop in Beirut",
+    title: "Blade & Cedar — Barbershop, Mar Mikhael, Beirut",
     description: OG_DESCRIPTION,
   },
 };
@@ -62,7 +64,7 @@ export default function RootLayout({
     <html
       lang="en"
       dir="ltr" /* flipped at runtime by LanguageProvider */
-      className={`${playfair.variable} ${inter.variable} ${cairo.variable}`}
+      className={`${fraunces.variable} ${inter.variable} ${cairo.variable}`}
     >
       <body className="font-sans">{children}</body>
     </html>

@@ -14,6 +14,18 @@ body {
   @apply bg-charcoal text-cream antialiased;
 }
 
+/* Film grain — a fixed, pointer-transparent noise layer.
+   Sells "photographed" instead of "rendered". */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
 /* Gold selection + visible keyboard focus everywhere */
 ::selection {
   background: #c9a24b;
@@ -25,18 +37,18 @@ body {
   outline-offset: 3px;
 }
 
-/* ── Arabic mode: Cairo replaces both Inter and Playfair, since
-      Playfair has no Arabic glyphs. These rules sit outside Tailwind's
+/* ── Arabic mode: Cairo replaces both Inter and Fraunces, since
+      Fraunces has no Arabic glyphs. These rules sit outside Tailwind's
       layers so they override the utility font classes in RTL. ── */
 html[dir="rtl"] body {
   font-family: var(--font-cairo), var(--font-inter), sans-serif;
 }
 html[dir="rtl"] .font-display {
   font-family: var(--font-cairo), serif;
-  letter-spacing: 0; /* Latin display tracking reads badly on Arabic */
+  letter-spacing: 0;
 }
 
-/* ── Reduced motion: kill all transitions/animations globally ── */
+/* ── Reduced motion: hover/fade transitions become instant ── */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
