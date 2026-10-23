@@ -31,12 +31,12 @@ export const GALLERY_IMAGES: SiteImage[] = [
     alt: { en: "Classic haircut in progress", ar: "قصّة كلاسيكية أثناء العمل" },
   },
   {
-    src: uns("photo-1519085360753-af0119f7cbe7", 900),
-    alt: { en: "Client after a fresh cut", ar: "زبون بعد قصّة جديدة" },
+    src: uns("photo-1622286342621-4bd786c2447c", 900),
+    alt: { en: "Beard work in the chair", ar: "شغل لحية عالكرسي" },
   },
   {
-    src: uns("photo-1618049049816-43a00d5b0c3d", 900),
-    alt: { en: "Men's haircut with clippers", ar: "قصّة بالماكينة" },
+    src: uns("photo-1599351431202-1e0f0137899a", 900),
+    alt: { en: "Barber at work on a cut", ar: "الحلّاق عم يشتغل عالقصّة" },
   },
   {
     src: uns("photo-1654097800183-574ba7368f74", 900),
@@ -47,8 +47,8 @@ export const GALLERY_IMAGES: SiteImage[] = [
     alt: { en: "Styled finish after a cut", ar: "تصفيف نهائي بعد القصّة" },
   },
   {
-    src: uns("photo-1621605815971-fbc98d665033", 900),
-    alt: { en: "The barber pole outside the shop", ar: "عمود الحلاق خارج الصالون" },
+    src: uns("photo-1621607512214-68297480165e", 900),
+    alt: { en: "Hot towel before the razor", ar: "منشفة سخنة قبل الموّس" },
   },
 ];
 
@@ -56,7 +56,7 @@ export const GALLERY_IMAGES: SiteImage[] = [
 export const BARBER_IMAGES: SiteImage[] = [
   {
     src: uns("photo-1507003211169-0a1dd7228f2d", 800),
-    alt: { en: "Karim Haddad, master barber", ar: "كرم حدّاد، حلاّق أوّل" },
+    alt: { en: "Karim Haddad, master barber", ar: "كرم حدّاد، حلّاق أوّل" },
   },
   {
     src: uns("photo-1500648767791-00dcc994a43e", 800),
